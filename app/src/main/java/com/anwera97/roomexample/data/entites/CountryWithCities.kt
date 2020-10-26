@@ -4,7 +4,7 @@ import androidx.room.Embedded
 import androidx.room.Relation
 
 data class CountryWithCities(
-    @Embedded val city: Country,
+    @Embedded val country: Country,
     @Relation(
         parentColumn = "id",
         entityColumn = "country_id"

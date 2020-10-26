@@ -12,6 +12,9 @@ interface CountryDao {
     @Query("SELECT * FROM country")
     fun getAll(): LiveData<List<Country>>
 
+    @Query("SELECT * FROM country WHERE name = :name")
+    fun findByName(name: String): List<Country>
+
     @Insert
     suspend fun insertAll(vararg countries: Country)
 

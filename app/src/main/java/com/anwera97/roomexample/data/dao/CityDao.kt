@@ -11,6 +11,10 @@ interface CityDao {
     @Query("SELECT * FROM country WHERE id = :countryId")
     fun getByCountry(countryId: String): LiveData<CountryWithCities>
 
+    @Transaction
+    @Query("SELECT * FROM country WHERE id = :countryId")
+    fun getByCountryTest(countryId: String): CountryWithCities
+
     @Insert
     suspend fun insertAll(vararg users: City)
 
